@@ -436,6 +436,9 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
                 // really horrible bug where a block is visible for breaking while sneaking but not otherwise
                 // so you can't see it, it goes to place something else, sneaks, then the next tick it tries to break
                 // and is unable since it's unsneaked in the intermediary tick
+                                // really horrible bug where a block is visible for breaking while sneaking but not otherwise
+                // so you can't see it, it goes to place something else, sneaks, then the next tick it tries to break
+                // and is unable since it's unsneaked in the intermediary tick
                 baritone.getInputOverrideHandler().setInputForceState(Input.SNEAK, true);
             }
             if (ctx.isLookingAt(pos) || ctx.playerRotations().isReallyCloseTo(rot)) {
@@ -455,7 +458,9 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
             }
             return new PathingCommand(null, PathingCommandType.CANCEL_AND_SET_GOAL);
         }
-
+                // really horrible bug where a block is visible for breaking while sneaking but not otherwise
+                // so you can't see it, it goes to place something else, sneaks, then the next tick it tries to break
+                // and is unable since it's unsneaked in the intermediary tick
         if (Baritone.settings().allowInventory.value) {
             ArrayList<Integer> usefulSlots = new ArrayList<>();
             List<IBlockState> noValidHotbarOption = new ArrayList<>();
@@ -480,7 +485,9 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
                 }
             }
         }
-
+                // really horrible bug where a block is visible for breaking while sneaking but not otherwise
+                // so you can't see it, it goes to place something else, sneaks, then the next tick it tries to break
+                // and is unable since it's unsneaked in the intermediary tick
         Goal goal = assemble(bcc, approxPlaceable.subList(0, 9));
         if (goal == null) {
             goal = assemble(bcc, approxPlaceable, true); // we're far away, so assume that we have our whole inventory to recalculate placeable properly
