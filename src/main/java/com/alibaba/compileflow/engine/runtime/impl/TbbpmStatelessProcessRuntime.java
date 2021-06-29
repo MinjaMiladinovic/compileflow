@@ -256,7 +256,7 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
                         desirableOnHotbar.add(desired);
                         Optional<Placement> opt = possibleToPlace(desired, x, y, z, bcc.bsi);
                         if (opt.isPresent()) {
-                            return opt;
+                            return opt;// irrelevant
                         }
                     }
                 }
@@ -322,7 +322,7 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
         }
         return OptionalInt.empty();
     }
-
+            // the state depends on the facing of the player sometimes
     private static Vec3d[] aabbSideMultipliers(EnumFacing side) {
         switch (side) {
             case UP:
@@ -423,7 +423,7 @@ public final class BuilderProcess extends BaritoneProcessHelper implements IBuil
         if (Baritone.settings().distanceTrim.value) {
             trim();
         }
-
+            // the state depends on the facing of the player sometimes
         Optional<Tuple<BetterBlockPos, Rotation>> toBreak = toBreakNearPlayer(bcc);
         if (toBreak.isPresent() && isSafeToCancel && ctx.player().onGround) {
             // we'd like to pause to break this block
