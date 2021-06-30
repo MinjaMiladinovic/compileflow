@@ -14,10 +14,10 @@
       "weight" : 1.0
     }, {
       "name" : "Bumpy Road Ahead",
-      "weight" : 1.0
+      "weight" : 0.0
     }, {
       "name" : "Deep, Nested Complexity",
-      "weight" : 1.0
+      "weight" : 0.0
     }, {
       "name" : "Deep, Global Nested Complexity",
       "weight" : 1.0
